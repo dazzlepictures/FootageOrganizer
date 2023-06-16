@@ -6,10 +6,66 @@ import re
 
 oiiotool = "E://_GFX_library//OP3//exe//prod//vendor//bin//oiio//windows//oiiotool.exe"
 
+ffmpeg_path = "E:/_GFX_library/ffmpeg"
+ffprobe_executable = "ffprobe.exe"  # Specify the executable file name
 
-def get_image_info(
-    filepath,
-):  # sourcery skip: use-getitem-for-re-match-groups, use-named-expression
+
+def get_video_info(filepath):
+    command = [
+        os.path.join(
+            ffmpeg_path, ffprobe_executable
+        ),  # Include the full path to ffprobe.exe
+        "-v",
+        "quiet",
+        "-print_format",
+        "json",
+        "-show_streams",
+        filepath,
+    ]
+    process = subprocess.run(command, capture_output=True, text=True)
+    output = json.loads(process.stdout)
+
+    # Get resolution
+    width = output["streams"][0]["width"]
+    height = output["streams"][0]["height"]
+    size = [width, height]
+
+    # Get color space
+    color_space = output["streams"][0].get("color_space", "Unknown")
+
+    # Get compression
+    compression = output["streams"][0].get("codec_name", "Unknown")
+
+    # Check if video has alpha channel
+    RGBA = "RGBA" if "alpha" in output["streams"][0].get("pix_fmt", "") else "RGB"
+
+    # Check pixel aspect ratio
+    pixel_aspect_ratio = output["streams"][0].get("display_aspect_ratio", "Unknown")
+
+    # Check frame rate
+    frame_rate = output["streams"][0].get("r_frame_rate", "Unknown")
+    if frame_rate != "Unknown":
+        # Convert it to a number
+        num, denom = map(int, frame_rate.split("/"))
+        frame_rate = num / denom
+
+    # Get number of frames
+    nb_frames = output["streams"][0].get("nb_read_frames", "Unknown")
+
+    print(output)
+
+    return (
+        size,
+        color_space,
+        compression,
+        RGBA,
+        pixel_aspect_ratio,
+        frame_rate,
+        nb_frames,
+    )
+
+
+def get_image_info(filepath):
     command = [
         oiiotool,
         "--info",
@@ -19,11 +75,9 @@ def get_image_info(
     process = subprocess.run(command, capture_output=True, text=True)
     output = process.stdout.split("\n")
 
-    print(output)
-
     # Extract image size from oiio output
     size = "Unknown"
-    resolution_pattern = re.compile(r"\b(\d+)\s*x\s*(\d+)\b")
+    resolution_pattern = re.compile(r"(\d+) x (\d+)")
     for line in output:
         match = re.search(resolution_pattern, line)
         if match:
@@ -34,11 +88,11 @@ def get_image_info(
     color_space = "Unknown"
     compression = "Unknown"
     for line in output:
-        if "oiio:ColorSpace:" in line:
-            color_space = line.split(":")[2].strip().replace('"', "")
+        if "oiio:ColorSpace" in line:
+            color_space = line.split(" ")[-1].strip().replace('"', "")
 
         if "compression:" in line:
-            compression = line.split(":")[1].strip().replace('"', "")
+            compression = line.split(" ")[-1].strip().replace('"', "")
 
     # Check if image have alpha channel
     RGBA = "Unknown"
@@ -57,14 +111,14 @@ def get_image_info(
 
     # Check frame rate
     frame_rate = "Unknown"
-    frame_rate_pattern_1 = re.compile(r"framesPerSecond:\s(\d+)/(\d+)\s\((\d+)\)")
-    frame_rate_pattern_2 = re.compile(r"nuke/input/frame_rate:\s\"(\d+\.\d+)\"")
+    frame_rate_pattern_1 = re.compile(r"framesPerSecond: (\d+)/1 \((\d+)\)")
+    frame_rate_pattern_2 = re.compile(r"nuke/input/frame_rate: \"(\d+\.\d+)\"")
 
     for line in output:
         match1 = re.search(frame_rate_pattern_1, line)
         match2 = re.search(frame_rate_pattern_2, line)
         if match1:
-            frame_rate = int(match1.group(3))
+            frame_rate = int(match1.group(2))
             break
         elif match2:
             frame_rate = float(match2.group(1))
@@ -73,45 +127,23 @@ def get_image_info(
     return size, color_space, compression, RGBA, pixel_aspect_ratio, frame_rate
 
 
-def create_jpg_proxy(filepath, output_filepath):
-    command = [
-        oiiotool,
-        filepath,
-        "-o",
-        output_filepath,
-    ]
-    subprocess.run(command, capture_output=True, text=True)
-
-
-def find_exr_sequences_in_directory(root):
-    exr_sequences = []
+def find_sequences_in_directory(root):
+    sequences = []
     index = 0
 
     for dirpath, dirs, files in os.walk(root):
         fs = fileseq.findSequencesInList(files)
 
         for f in fs:
-            if f.extension() == ".exr":
-                sequence_name = f.basename()
+            # Get the extension of the file
+            image_format = f.extension()
+
+            if image_format in {".exr", ".jpg", ".png", ".bmp", ".tiff"} and len(f) > 1:
+                sequence_name = f.basename().split(".")[0]
                 directory_path = dirpath
                 index += 1
 
-                # Find the heaviest frame in the sequence
-                heaviest_frame_path = None
-                heaviest_frame_size = 0
-
-                for frame in f:
-                    frame_path = os.path.join(dirpath, str(frame))
-                    frame_size = os.path.getsize(frame_path)
-                    if frame_size > heaviest_frame_size:
-                        heaviest_frame_path = frame_path
-                        heaviest_frame_size = frame_size
-
-                # Create jpg proxy for the heaviest frame
-                jpg_proxy_path = os.path.join(
-                    directory_path, f"{sequence_name}_heaviest.jpg"
-                )
-                # create_jpg_proxy(heaviest_frame_path, jpg_proxy_path)
+                first_frame_path = os.path.join(dirpath, f[0])
 
                 (
                     image_size,
@@ -120,9 +152,9 @@ def find_exr_sequences_in_directory(root):
                     RGBA,
                     pixel_aspect_ratio,
                     frame_rate,
-                ) = get_image_info(heaviest_frame_path)
+                ) = get_image_info(first_frame_path)
 
-                exr_sequences.append(
+                sequences.append(
                     {
                         "sequence_name": sequence_name,
                         "directory_path": os.path.abspath(directory_path),
@@ -133,18 +165,51 @@ def find_exr_sequences_in_directory(root):
                         "compression": compression,
                         "pixel_aspect_ratio": pixel_aspect_ratio,
                         "frame_rate": frame_rate,
+                        "image_format": image_format,  # add image format to the data
                         "index": index,
                     }
                 )
 
-    return exr_sequences
+            elif image_format in {".mov", ".mp4", ".avi", ".mkv"}:
+                sequence_name = f.basename().split(".")[0]
+                directory_path = dirpath
+                index += 1
+
+                (
+                    image_size,
+                    color_space,
+                    compression,
+                    RGBA,
+                    pixel_aspect_ratio,
+                    frame_rate,
+                    nb_frames,
+                ) = get_video_info(first_frame_path)
+
+                sequences.append(
+                    {
+                        "sequence_name": sequence_name,
+                        "directory_path": os.path.abspath(directory_path),
+                        "frame_range": nb_frames,
+                        "image_size": image_size,
+                        "image_channels": RGBA,
+                        "color_space": color_space,
+                        "compression": compression,
+                        "pixel_aspect_ratio": pixel_aspect_ratio,
+                        "frame_rate": frame_rate,
+                        "image_format": image_format,  # add image format to the data
+                        "index": index,
+                    }
+                )
+
+    return sequences
 
 
 root_path = "E:/Fidel/footage_classifier/footage_test"
+# root_path = "//truenas/storage01/_ELEMENTS"
 
 try:
-    sequences = find_exr_sequences_in_directory(root_path)
-    print("Sequences found:", sequences)
+    sequences = find_sequences_in_directory(root_path)
+    print("Sequences found:")
 except Exception as e:
     print("Error during sequence finding:", e)
 
