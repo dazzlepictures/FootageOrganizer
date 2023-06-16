@@ -1,0 +1,41 @@
+[
+    {
+        "directory": "E:/Fidel/footage_classifier/footage_test\\muzzle11TurnVars02Angle000\\_preview",
+        "name": "muzzle11TurnVars02Angle000",
+        "format": ".mov",
+        "duration_seconds": 6.25,
+        "fps": 24.0,
+        "total_frames": "150",
+        "frame_size": [
+            1024,
+            576
+        ],
+        "video_codec": "h264"
+    },
+    {
+        "directory": "E:/Fidel/footage_classifier/footage_test\\muzzle11TurnVars02Angle015\\_preview",
+        "name": "muzzle11TurnVars02Angle015",
+        "format": ".mov",
+        "duration_seconds": 6.25,
+        "fps": 24.0,
+        "total_frames": "150",
+        "frame_size": [
+            1024,
+            576
+        ],
+        "video_codec": "h264"
+    },
+    {
+        "directory": "E:/Fidel/footage_classifier/footage_test\\muzzle11TurnVars02Angle030\\_preview",
+        "name": "muzzle11TurnVars02Angle030",
+        "format": ".mov",
+        "duration_seconds": 6.25,
+        "fps": 24.0,
+        "total_frames": "150",
+        "frame_size": [
+            1024,
+            576
+        ],
+        "video_codec": "h264"
+    }
+]

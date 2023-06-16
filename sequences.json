@@ -1,0 +1,110 @@
+[
+    {
+        "sequence_name": "muzzle11TurnVars02Angle000.",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle000",
+        "frame_range": [
+            1001,
+            1150
+        ],
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGBA",
+        "color_space": "Linear",
+        "compression": "dwab",
+        "pixel_aspect_ratio": 1.0,
+        "frame_rate": 24,
+        "index": 1
+    },
+    {
+        "sequence_name": "muzzle_11_turn_variations.turntable_02.angle_0.",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle000\\_original",
+        "frame_range": [
+            1001,
+            1150
+        ],
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGBA",
+        "color_space": "Linear",
+        "compression": "zips",
+        "pixel_aspect_ratio": 1.0,
+        "frame_rate": "Unknown",
+        "index": 2
+    },
+    {
+        "sequence_name": "muzzle11TurnVars02Angle015.",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle015",
+        "frame_range": [
+            1001,
+            1150
+        ],
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGBA",
+        "color_space": "Linear",
+        "compression": "dwab",
+        "pixel_aspect_ratio": 1.0,
+        "frame_rate": 24,
+        "index": 3
+    },
+    {
+        "sequence_name": "muzzle_11_turn_variations.turntable_02.angle_15.",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle015\\_original",
+        "frame_range": [
+            1001,
+            1150
+        ],
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGBA",
+        "color_space": "Linear",
+        "compression": "zips",
+        "pixel_aspect_ratio": 1.0,
+        "frame_rate": "Unknown",
+        "index": 4
+    },
+    {
+        "sequence_name": "muzzle11TurnVars02Angle030.",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle030",
+        "frame_range": [
+            1001,
+            1150
+        ],
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGBA",
+        "color_space": "Linear",
+        "compression": "dwab",
+        "pixel_aspect_ratio": 1.0,
+        "frame_rate": 24,
+        "index": 5
+    },
+    {
+        "sequence_name": "muzzle_11_turn_variations.turntable_02.angle_30.",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle030\\_original",
+        "frame_range": [
+            1001,
+            1150
+        ],
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGBA",
+        "color_space": "Linear",
+        "compression": "zips",
+        "pixel_aspect_ratio": 1.0,
+        "frame_rate": "Unknown",
+        "index": 6
+    }
+]
