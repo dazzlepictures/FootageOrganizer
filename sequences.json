@@ -1,6 +1,6 @@
 [
     {
-        "sequence_name": "muzzle11TurnVars02Angle000.",
+        "sequence_name": "muzzle11TurnVars02Angle000",
         "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle000",
         "frame_range": [
             1001,
@@ -15,10 +15,11 @@
         "compression": "dwab",
         "pixel_aspect_ratio": 1.0,
         "frame_rate": 24,
+        "image_format": ".exr",
         "index": 1
     },
     {
-        "sequence_name": "muzzle_11_turn_variations.turntable_02.angle_0.",
+        "sequence_name": "muzzle_11_turn_variations",
         "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle000\\_original",
         "frame_range": [
             1001,
@@ -33,10 +34,27 @@
         "compression": "zips",
         "pixel_aspect_ratio": 1.0,
         "frame_rate": "Unknown",
+        "image_format": ".exr",
         "index": 2
     },
     {
-        "sequence_name": "muzzle11TurnVars02Angle015.",
+        "sequence_name": "muzzle11TurnVars02Angle",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle000\\_preview",
+        "frame_range": "Unknown",
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGB",
+        "color_space": "Unknown",
+        "compression": "exr",
+        "pixel_aspect_ratio": "16:9",
+        "frame_rate": 25.0,
+        "image_format": ".mov",
+        "index": 3
+    },
+    {
+        "sequence_name": "muzzle11TurnVars02Angle015",
         "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle015",
         "frame_range": [
             1001,
@@ -51,10 +69,11 @@
         "compression": "dwab",
         "pixel_aspect_ratio": 1.0,
         "frame_rate": 24,
-        "index": 3
+        "image_format": ".exr",
+        "index": 4
     },
     {
-        "sequence_name": "muzzle_11_turn_variations.turntable_02.angle_15.",
+        "sequence_name": "muzzle_11_turn_variations",
         "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle015\\_original",
         "frame_range": [
             1001,
@@ -69,10 +88,27 @@
         "compression": "zips",
         "pixel_aspect_ratio": 1.0,
         "frame_rate": "Unknown",
-        "index": 4
+        "image_format": ".exr",
+        "index": 5
     },
     {
-        "sequence_name": "muzzle11TurnVars02Angle030.",
+        "sequence_name": "muzzle11TurnVars02Angle",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle015\\_preview",
+        "frame_range": "Unknown",
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGB",
+        "color_space": "Unknown",
+        "compression": "exr",
+        "pixel_aspect_ratio": "16:9",
+        "frame_rate": 25.0,
+        "image_format": ".mov",
+        "index": 6
+    },
+    {
+        "sequence_name": "muzzle11TurnVars02Angle030",
         "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle030",
         "frame_range": [
             1001,
@@ -87,10 +123,11 @@
         "compression": "dwab",
         "pixel_aspect_ratio": 1.0,
         "frame_rate": 24,
-        "index": 5
+        "image_format": ".exr",
+        "index": 7
     },
     {
-        "sequence_name": "muzzle_11_turn_variations.turntable_02.angle_30.",
+        "sequence_name": "muzzle_11_turn_variations",
         "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle030\\_original",
         "frame_range": [
             1001,
@@ -105,6 +142,23 @@
         "compression": "zips",
         "pixel_aspect_ratio": 1.0,
         "frame_rate": "Unknown",
-        "index": 6
+        "image_format": ".exr",
+        "index": 8
+    },
+    {
+        "sequence_name": "muzzle11TurnVars02Angle",
+        "directory_path": "E:\\Fidel\\footage_classifier\\footage_test\\muzzle11TurnVars02Angle030\\_preview",
+        "frame_range": "Unknown",
+        "image_size": [
+            3840,
+            2160
+        ],
+        "image_channels": "RGB",
+        "color_space": "Unknown",
+        "compression": "exr",
+        "pixel_aspect_ratio": "16:9",
+        "frame_rate": 25.0,
+        "image_format": ".mov",
+        "index": 9
     }
 ]
