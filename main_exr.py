@@ -138,7 +138,10 @@ def find_sequences_in_directory(root):
             # Get the extension of the file
             image_format = f.extension()
 
-            if image_format in {".exr", ".jpg", ".png", ".bmp", ".tiff"} and len(f) > 1:
+            if (
+                image_format in {".exr", ".jpg", ".png", ".bmp", ".tiff", "jpeg"}
+                and len(f) > 1
+            ):
                 sequence_name = f.basename().split(".")[0]
                 directory_path = dirpath
                 index += 1
