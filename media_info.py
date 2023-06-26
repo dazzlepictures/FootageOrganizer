@@ -119,3 +119,46 @@ def get_image_info(filepath):
             break
 
     return size, color_space, compression, RGBA, pixel_aspect_ratio, frame_rate
+
+
+def convert_frame_to_jpg(input_path, output_path):
+    command = [
+        oiiotool,
+        input_path,
+        "-o",
+        output_path,
+    ]
+
+    print(command)
+    process = subprocess.run(command, capture_output=True, text=True)
+    if process.returncode != 0:
+        raise Exception("Error during conversion:", process.stderr)
+
+    return output_path
+
+
+def convert_frame_to_jpg_video(input_video, output_path, frame_number):
+    # convert video to one frame jpg
+
+    command = [
+        os.path.join(ffmpeg_path, "ffmpeg.exe"),
+        "-y",
+        "-i",
+        input_video,
+        "-vf",
+        "select=gte(n\,{})".format(frame_number),
+        "-vframes",
+        "1",
+        "-q:v",
+        "2",
+        output_path,
+    ]
+
+    print(command)
+    process = subprocess.run(
+        command, capture_output=True, text=True, shell=True, stdin=subprocess.DEVNULL
+    )
+    if process.returncode != 0:
+        raise Exception("Error during conversion:", process.stderr)
+
+    return output_path

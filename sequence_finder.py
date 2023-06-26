@@ -5,13 +5,14 @@ import os
 root_path = "E:/Fidel/footage_classifier/footage_test"
 
 sequences = []
+index = 0
 
-for dirpath, dirs, files in os.walk(root_path):
-    try:
-        sequences += find_sequences_in_list(files, dirpath)
-        print("Sequences found:")
-    except Exception as e:
-        print("Error during sequence finding:", e)
+try:
+    index += 1
+    sequences += find_sequences_in_list(root_path)
+    print("Sequences found:")
+except Exception as e:
+    print("Error during sequence finding:", e)
 
 try:
     # Save to a JSON file
