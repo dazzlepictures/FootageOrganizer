@@ -24,7 +24,15 @@ function renderGallery(data) {
         card.className = 'card';
 
         const img = document.createElement('img');
-        img.src = '/BodySG_Base_Color.png'; // Use the specific thumbnail
+        // fetch the thumbnail and correct slashes
+
+        let absPath = sequence.proxy_output_path.replace(/\\/g, '/');
+
+        let basePath = "E:/Fidel/footage_classifier/";
+
+        let relativePath = absPath.replace(basePath, '');
+        img.src = relativePath
+
         img.alt = sequence.sequence_name;
         card.appendChild(img);
 
