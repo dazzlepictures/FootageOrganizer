@@ -1,1 +1,4 @@
 footage_test/*
+__pycache__/file_operations.cpython-37.pyc
+__pycache__/media_info.cpython-37.pyc
+.vscode/launch.json
