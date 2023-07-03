@@ -16,7 +16,7 @@ except Exception as e:
 
 try:
     # Save to a JSON file
-    with open("sequences.json", "w") as f:
+    with open("./gallery_app/sequences.json", "w") as f:
         json.dump(sequences, f, indent=4)
     print("JSON file written.")
 except Exception as e:

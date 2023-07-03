@@ -17,7 +17,8 @@
         "frame_rate": 24,
         "image_format": ".exr",
         "index": 0,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/muzzle11TurnVars02Angle000.1001.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/muzzle11TurnVars02Angle000.1001.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/muzzle11TurnVars02Angle000.1001.exr"
     },
     {
         "sequence_name": "muzzle_11_turn_variations",
@@ -37,7 +38,8 @@
         "frame_rate": "Unknown",
         "image_format": ".exr",
         "index": 1,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/_original/muzzle_11_turn_variations.turntable_02.angle_0.1001.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/_original/muzzle_11_turn_variations.turntable_02.angle_0.1001.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/_original/muzzle_11_turn_variations.turntable_02.angle_0.1001.exr"
     },
     {
         "sequence_name": "muzzle11TurnVars02Angle",
@@ -54,7 +56,8 @@
         "frame_rate": 24.0,
         "image_format": ".mov",
         "index": 2,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/_preview/muzzle11TurnVars02Angle000.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/_preview/muzzle11TurnVars02Angle000.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle000/_preview/muzzle11TurnVars02Angle000.mov"
     },
     {
         "sequence_name": "muzzle11TurnVars02Angle015",
@@ -74,7 +77,8 @@
         "frame_rate": 24,
         "image_format": ".exr",
         "index": 3,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/muzzle11TurnVars02Angle015.1001.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/muzzle11TurnVars02Angle015.1001.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/muzzle11TurnVars02Angle015.1001.exr"
     },
     {
         "sequence_name": "muzzle_11_turn_variations",
@@ -94,7 +98,8 @@
         "frame_rate": "Unknown",
         "image_format": ".exr",
         "index": 4,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/_original/muzzle_11_turn_variations.turntable_02.angle_15.1001.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/_original/muzzle_11_turn_variations.turntable_02.angle_15.1001.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/_original/muzzle_11_turn_variations.turntable_02.angle_15.1001.exr"
     },
     {
         "sequence_name": "muzzle11TurnVars02Angle",
@@ -111,7 +116,8 @@
         "frame_rate": 24.0,
         "image_format": ".mov",
         "index": 5,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/_preview/muzzle11TurnVars02Angle015.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/_preview/muzzle11TurnVars02Angle015.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle015/_preview/muzzle11TurnVars02Angle015.mov"
     },
     {
         "sequence_name": "muzzle11TurnVars02Angle030",
@@ -131,7 +137,8 @@
         "frame_rate": 24,
         "image_format": ".exr",
         "index": 6,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/muzzle11TurnVars02Angle030.1001.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/muzzle11TurnVars02Angle030.1001.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/muzzle11TurnVars02Angle030.1001.exr"
     },
     {
         "sequence_name": "muzzle_11_turn_variations",
@@ -151,7 +158,8 @@
         "frame_rate": "Unknown",
         "image_format": ".exr",
         "index": 7,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/_original/muzzle_11_turn_variations.turntable_02.angle_30.1001.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/_original/muzzle_11_turn_variations.turntable_02.angle_30.1001.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/_original/muzzle_11_turn_variations.turntable_02.angle_30.1001.exr"
     },
     {
         "sequence_name": "muzzle11TurnVars02Angle",
@@ -168,6 +176,7 @@
         "frame_rate": 24.0,
         "image_format": ".mov",
         "index": 8,
-        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/_preview/muzzle11TurnVars02Angle030.jpg"
+        "proxy_output_path": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/_preview/muzzle11TurnVars02Angle030.jpg",
+        "sequence_entire_name": "E:/Fidel/footage_classifier/footage_test/muzzle11TurnVars02Angle030/_preview/muzzle11TurnVars02Angle030.mov"
     }
 ]

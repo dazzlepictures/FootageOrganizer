@@ -31,6 +31,9 @@ def find_sequences_in_list(dirpath):
             ):
                 sequence_name = f.basename().split(".")[0]
                 directory_path = root
+                sequence_entire_name = os.path.join(directory_path, f[0]).replace(
+                    "\\", "/"
+                )
                 convert_frame_to_jpg(first_frame_path, proxy_output_path)
 
                 (
@@ -56,6 +59,7 @@ def find_sequences_in_list(dirpath):
                         "image_format": image_format,
                         "index": index,
                         "proxy_output_path": proxy_output_path,
+                        "sequence_entire_name": sequence_entire_name,
                     }
                 )
 
@@ -65,6 +69,9 @@ def find_sequences_in_list(dirpath):
                 print(f"frame start {f.start()}")
                 sequence_name = f.basename().split(".")[0]
                 directory_path = root
+                sequence_entire_name = os.path.join(directory_path, f[0]).replace(
+                    "\\", "/"
+                )
                 convert_frame_to_jpg_video(
                     first_frame_path, proxy_output_path, f.start()
                 )
@@ -93,6 +100,7 @@ def find_sequences_in_list(dirpath):
                         "image_format": image_format,
                         "index": index,
                         "proxy_output_path": proxy_output_path,
+                        "sequence_entire_name": sequence_entire_name,
                     }
                 )
 

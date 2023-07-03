@@ -14,7 +14,6 @@ document.getElementById('search').addEventListener('input', function (e) {
     renderGallery(filteredSequences);
 });
 
-
 function renderGallery(data) {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = ''; // clear the gallery
@@ -35,6 +34,30 @@ function renderGallery(data) {
 
         img.alt = sequence.sequence_name;
         card.appendChild(img);
+
+        // add a button to open the folder in windows explorer C:/ using  the shell module
+
+        const openFolderButton = document.createElement('button');
+
+        openFolderButton.textContent = 'Open file';
+
+
+
+        openFolderButton.addEventListener('click', function () {
+            fetch(`http://localhost:5000/openfolder?path=${sequence.sequence_entire_name}`)
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data); // Log the response from the server
+                })
+                .catch(error => {
+                    console.error(error); // Log any errors that occurred
+                });
+        });
+
+
+
+        card.appendChild(openFolderButton);
+
 
         const h2 = document.createElement('h2');
         h2.textContent = sequence.sequence_name;
